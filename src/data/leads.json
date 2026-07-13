@@ -1,0 +1,20 @@
+[
+  {
+    "id": "lead-1",
+    "name": "Rohan Sharma",
+    "email": "rohan@sharmapackagers.com",
+    "phone": "+91 98765 43210",
+    "message": "Looking for custom ERP configuration to manage three packaging warehouses in Mumbai. Need integration with our biometric check-in machines.",
+    "status": "New",
+    "createdAt": "2026-07-13T10:30:00.000Z"
+  },
+  {
+    "id": "lead-2",
+    "name": "Anita Desai",
+    "email": "anita@desaitransports.in",
+    "phone": "+91 88888 77777",
+    "message": "Interested in CRM standard plan demo. We want to track follow-ups of our logistics clients.",
+    "status": "Contacted",
+    "createdAt": "2026-07-13T11:45:00.000Z"
+  }
+]

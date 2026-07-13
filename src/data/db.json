@@ -1,0 +1,214 @@
+{
+  "pricingPlans": [
+    {
+      "id": "starter",
+      "name": "Starter Plan",
+      "price": "$99",
+      "period": "month",
+      "description": "Essential ERP & CRM tools for small teams seeking automation.",
+      "features": [
+        "Up to 10 active users",
+        "Core HR & Attendance modules",
+        "Lead & Customer Management",
+        "Compliant Invoicing & Billing",
+        "Standard Dashboards & Reports",
+        "Email support (24hr response)"
+      ],
+      "ctaText": "Request Starter Demo",
+      "isPopular": false
+    },
+    {
+      "id": "professional",
+      "name": "Professional Plan",
+      "price": "$249",
+      "period": "month",
+      "description": "Advanced controls and multi-module capabilities for growing organizations.",
+      "ctaText": "Request Pro Demo",
+      "isPopular": true,
+      "features": [
+        "Up to 50 active users",
+        "All Starter Plan features",
+        "Full Payroll & Inventory control",
+        "Sales Pipeline & Smart Follow-ups",
+        "Multi-branch sync & Role access",
+        "Priority WhatsApp & Email support",
+        "API integrations (Zapier, etc.)"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Custom Enterprise",
+      "price": "Custom",
+      "period": "year",
+      "description": "Tailor-made system with limitless user capacities, dedicated hosting, and modules.",
+      "features": [
+        "Unlimited users & branches",
+        "Fully customized module engine",
+        "Dedicated database & cloud hosting",
+        "On-premise deployment option",
+        "White-labeled client portals",
+        "24/7 dedicated Account Manager",
+        "Custom migration & onsite training"
+      ],
+      "ctaText": "Get Custom Quote",
+      "isPopular": false
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Sarah Jenkins",
+      "role": "Chief Operating Officer",
+      "company": "Vanguard Manufacturing",
+      "content": "Deploying YourCompany ERP was the single best operational decision we made last year. We consolidated 4 disparate systems into one dashboard, saving over 22 hours per week in reconciliation labor.",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+      "rating": 5
+    },
+    {
+      "id": "t2",
+      "name": "David Chen",
+      "role": "Director of Sales",
+      "company": "AeroGlobal Import/Export",
+      "content": "Our sales reps were missing nearly 30% of follow-ups prior to using their CRM. The automated pipelines and reminders have raised our close rates by 18% in less than 4 months.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "rating": 5
+    },
+    {
+      "id": "t3",
+      "name": "Elena Rostova",
+      "role": "Managing Director",
+      "company": "Apex Healthcare Group",
+      "content": "The role-based security allows clinic receptionists, doctors, and auditors to access only the information relevant to them. The HIPAA compliance and inventory controls are impeccable.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+      "rating": 5
+    }
+  ],
+  "blogPosts": [
+    {
+      "slug": "what-is-erp-software-and-why-businesses-need-it",
+      "title": "What is ERP Software and Why Businesses Need It",
+      "description": "Discover how Enterprise Resource Planning (ERP) software integrates core workflows like HR, finance, inventory, and sales into a single database to eliminate operational silos.",
+      "publishedAt": "July 2, 2026",
+      "readTime": "6 min read",
+      "category": "ERP & Operations",
+      "author": {
+        "name": "Andrew Carver",
+        "role": "Senior Operations Consultant",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "ERP",
+        "Operations",
+        "SaaS",
+        "Automation"
+      ],
+      "content": "Enterprise Resource Planning (ERP) has transitioned from an acronym reserved for Fortune 500 conglomerates into a critical survival toolkit for growing mid-market enterprises. But what exactly is an ERP, and why does a business need one?\n\nAt its core, ERP software is an integrated database suite designed to run every aspect of your enterprise operations. Instead of your HR department using one app, your inventory managers using Excel sheets, and your accountants using local software, an ERP consolidates these functions. Every department accesses the same real-time data registry.\n\n### The Problem of Disconnected Systems\n\nWhen systems are fragmented, operational friction increases:\n1. **Double Data Entry:** Sales reps write down customer orders, which accounts must manually re-type into billing, and warehouse staff must re-type for shipping manifests.\n2. **Data Discrepancies:** Your inventory ledger says you have 100 units of stock, but the warehouse only has 40 because a return wasn't logged correctly in the sales records.\n3. **Delayed Decisions:** Generating a company-wide profit-and-loss sheet takes weeks of Excel compilation, making it impossible to respond quickly to market changes.\n\n### Key Benefits of an Integrated ERP\n\n- **A Single Source of Truth:** Live data updates across all branches. When sales issues an invoice, inventory levels drop automatically, and accounting entries reconcile instantly.\n- **Enhanced Productivity:** Automation eliminates repetitive admin work. Shifts are calculated directly from biometric registers, and payroll runs in a few clicks.\n- **Executive Visibility:** Real-time dashboards display margins, outstanding receivables, active production lines, and cash flow forecasts instantly.\n\nIn today's fast-paced landscape, scaling without an ERP is like navigating a complex highway system with a outdated map. Investing in a customizable ERP creates the solid digital foundation your company needs to scale efficiently and profitably."
+    },
+    {
+      "slug": "crm-software-for-small-and-growing-businesses",
+      "title": "CRM Software for Small and Growing Businesses",
+      "description": "Learn how customer relationship management tools keep your sales reps organized, nurture leads, prevent deals from stalling, and increase customer retention.",
+      "publishedAt": "June 28, 2026",
+      "readTime": "5 min read",
+      "category": "CRM & Sales",
+      "author": {
+        "name": "Janice Miller",
+        "role": "Lead Sales Strategist",
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1552581234-2612b75d8953?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "CRM",
+        "Sales",
+        "Customer Retention",
+        "Leads"
+      ],
+      "content": "Many small business owners start out using emails, calendar notes, and spreadsheets to manage their client relationships. However, as leads scale, these manual tools quickly show their limitations. Conversations get forgotten, quotes sit unanswered, and high-value opportunities slip through the cracks.\n\nThis is where a Customer Relationship Management (CRM) platform becomes essential.\n\n### What is a CRM?\n\nA CRM is a centralized platform that tracks all interactions between your business and its prospects or clients. From their first website inquiry to their latest customer service ticket, every touchpoint is recorded.\n\n### Crucial Features for Growing Businesses\n\n1. **Contact & Pipeline Visualizer:** A Kanban deal board helps sales reps easily see the status of every deal (e.g., Prospecting, Quote Sent, Negotiation, Closed Won).\n2. **Follow-Up Automation:** Setting up automatic follow-up tasks ensures that reps reach out on time. Email sequences can nurture leads who aren't quite ready to buy.\n3. **Unified Communications:** Integrating email and call logs ensures that anyone in your company can review past conversations before jumping on a call.\n4. **The Business Impact**\n- **Shorter Sales Cycles:** Rapid responses prevent leads from researching competitors.\n- **Improved Retention:** Better organization allows your account managers to anticipate renewal dates and check in proactively.\n- **Accurate Sales Forecasts:** CRM analytics show you which campaigns deliver the highest ROI, helping you allocate marketing budgets more effectively.\n\nAdopting a CRM isn't just about organizing contacts; it's about building a scalable system that converts inquiries into loyal, long-term clients."
+    },
+    {
+      "slug": "custom-erp-vs-ready-made-erp",
+      "title": "Custom ERP vs Ready-Made ERP: The Ultimate Comparison",
+      "description": "Should you buy an off-the-shelf SaaS ERP or invest in a customizable ERP platform? We compare costs, implementation times, and long-term business alignment.",
+      "publishedAt": "June 19, 2026",
+      "readTime": "8 min read",
+      "category": "ERP & Strategy",
+      "author": {
+        "name": "Andrew Carver",
+        "role": "Senior Operations Consultant",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "ERP",
+        "Custom Software",
+        "Enterprise Tech",
+        "Strategy"
+      ],
+      "content": "When selecting software to run operations, businesses face a classic dilemma: Do we buy a ready-made, off-the-shelf platform, or build/customize an ERP tailored to our exact processes?\n\nLet's examine the trade-offs of both options to help you choose the best fit for your company.\n\n### Off-the-Shelf ERP: The Pros and Cons\n\nReady-made ERPs are quick to sign up for and include pre-designed features based on industry averages.\n\n* **Pros:** Lower initial setup cost, immediate sign-up access, and continuous software updates.\n* **Cons:** Monthly licensing fees scale quickly as you add users. Most importantly, you must adapt your business workflows to match the software's layout. If the software lacks a field or report you need, configuring it can be highly expensive or completely impossible.\n\n### Customizable ERP: The Best of Both Worlds\n\nA customizable ERP framework (like the solutions provided by YourCompany Software Solutions) allows you to customize the core modules to align with your business.\n\n* **Pros:** The software adapts to your specific workflows, protecting your proprietary operations. You can build custom tables, add specific approval chains, and integrate easily with local bank portals or machinery APIs. In the long run, you save money by avoiding high monthly per-user licensing fees.\n* **Cons:** Requires a brief implementation phase for configuration, testing, and training.\n\n### Which Option Should You Choose?\n\n- Choose **Ready-Made** if your company has fewer than 10 employees, standard operations, and no complex shipping or manufacturing workflows.\n- Choose **Customizable** if you have unique processes that give you a competitive advantage, multiple branches, complex inventory requirements, or if you want to avoid expensive monthly seat licenses.\n\nAt YourCompany Software Solutions, we build customizable solutions that match your business workflows today while keeping the flexibility to grow with you tomorrow."
+    },
+    {
+      "slug": "how-lead-management-crm-improves-sales",
+      "title": "How Lead Management CRM Improves Sales Conversions",
+      "description": "Explore the mechanics of lead scoring, automated routing, and communication logs, and see how they boost sales team conversion rates.",
+      "publishedAt": "June 12, 2026",
+      "readTime": "5 min read",
+      "category": "CRM & Sales",
+      "author": {
+        "name": "Janice Miller",
+        "role": "Lead Sales Strategist",
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "Lead Management",
+        "CRM",
+        "Sales Operations",
+        "Analytics"
+      ],
+      "content": "A business's growth depends on how well it converts raw inquiries into paying customers. Yet, many sales teams treat lead management as a manual, ad-hoc process. Leads sit in inboxes, follow-ups are inconsistent, and reps call prospects without knowing which products they looked at.\n\nA Lead Management CRM fixes these problems by automating the sales funnel.\n\n### 1. Speed-to-Lead Automation\n\nStudies show that reaching out to a lead within 5 minutes of their submission makes them **100 times more likely** to connect than waiting just 30 minutes. A CRM automates this by instantly routing lead info to the appropriate sales representative's phone and browser the second a form is submitted.\n\n### 2. Lead Scoring and Prioritization\n\nNot all leads are created equal. Lead scoring assigns point values to prospects based on criteria like:\n- **Demographics:** Company size, industry, location.\n- **Behavior:** Visiting pricing pages, downloading brochures, opening newsletters.\n\nReps can filter their daily dashboards to call the highest-scoring, hot leads first, maximizing their sales conversion rates.\n\n### 3. Clear Historical Logs\n\nBefore picking up the phone, a sales rep can review the lead's entire history in the CRM. They can see which pages they visited and read notes from previous team members. This context allows reps to customize their pitch, building trust and closing deals faster.\n\nBy replacing guess-work with data-driven automation, a Lead Management CRM empowers your sales team to convert more leads with less effort."
+    },
+    {
+      "slug": "benefits-of-business-automation-software",
+      "title": "The Strategic Benefits of Business Automation Software",
+      "description": "A look at how business automation software reduces human error, cuts down administrative costs, and enables employees to focus on high-value tasks.",
+      "publishedAt": "June 05, 2026",
+      "readTime": "7 min read",
+      "category": "Automation & AI",
+      "author": {
+        "name": "Marcus Vance",
+        "role": "Technology Director",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "Automation",
+        "Efficiency",
+        "Digital Transformation",
+        "ERP"
+      ],
+      "content": "In a competitive business environment, efficiency is key. Yet, many companies waste hundreds of hours on manual administrative tasks like matching purchase orders, requesting leave approvals, and copying invoice records.\n\nBusiness automation software eliminates these repetitive tasks, helping your company run faster and more efficiently.\n\n### 1. Eliminating Human Error\n\nManual data entry is prone to mistakes, from mistyped invoice amounts to incorrect shipping addresses. In inventory management, a single zero typo can disrupt your entire supply chain. Automation software handles these updates directly, ensuring that data is copied accurately every time.\n\n### 2. Streamlining Approvals\n\nIn many offices, document approvals require printing out forms and chasing down managers for physical signatures. Automation software digits this workflow. When an employee requests a purchase or takes leave, the request is automatically routed to their manager's app for approval, sending reminders if it sits unanswered.\n\n### 3. Empowering Employees\n\nWhen employees spend their time on manual data entry, they can't focus on growing your business. Automation frees your team to focus on high-value tasks like:\n- Improving customer relationships.\n- Developing new products.\n- Resolving complex operational challenges.\n\n### The Bottom Line\n\nBusiness automation software is more than just a tool for saving time; it's a strategic asset. By reducing errors, accelerating approvals, and freeing up staff, automation helps your company scale without a corresponding increase in overhead costs."
+    },
+    {
+      "slug": "erp-modules-every-company-should-have",
+      "title": "11 ERP Modules Every Growing Company Should Have",
+      "description": "A breakdown of the essential ERP modules—from HR and inventory control to finance and dynamic billing systems—that build a unified enterprise.",
+      "publishedAt": "May 28, 2026",
+      "readTime": "6 min read",
+      "category": "ERP & Operations",
+      "author": {
+        "name": "Andrew Carver",
+        "role": "Senior Operations Consultant",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+      },
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80",
+      "tags": [
+        "ERP",
+        "ERP Modules",
+        "Operations",
+        "Finance"
+      ],
+      "content": "When implementing an Enterprise Resource Planning (ERP) platform, you don't have to launch every feature at once. The best approach is modular, starting with the features your business needs today and adding others as you scale.\n\nBut which modules should you prioritize? Here is a breakdown of the 11 essential ERP modules for growing companies.\n\n### 1. Finance & Accounting\nThe core of any ERP. It manages your general ledger, accounts payable, accounts receivable, bank reconciliation, and generates real-time balance sheets and P&L statements.\n\n### 2. HR & Employee Management\nMaintains a secure database of employee profiles, organizational structures, contracts, performance logs, and onboarding/offboarding workflows.\n\n### 3. Attendance & Shift Roster\nTracks staff hours using biometric inputs or geofenced web check-ins, feeding data directly into your payroll system.\n\n### 4. Payroll & Compensation\nAutomates monthly salary payments by calculating local taxes, pension contributions, deductions, and bonuses, then generating PDF payslips.\n\n### 5. Inventory & Warehouse\nTracks inventory levels across multiple warehouses in real time. It monitors batches, serial numbers, and triggers automatic reorders when stock drops.\n\n### 6. Purchase & Sourcing\nManages suppliers, automates RFQs, processes purchase orders, and handles goods received notes (GRNs).\n\n### 7. Sales & Distribution\nSimplifies order management by creating quotes, processing sales orders, managing discounts, and tracking deliveries.\n\n### 8. Billing & Invoices\nGenerates professional, tax-compliant invoices and tracks outstanding payments with automated reminders.\n\n### 9. Advanced Reports & BI\nCreates dynamic, spreadsheet-style reports and executive dashboards showing key business metrics.\n\n### 10. Roles & Permissions Control\nSecures your data with granular access settings. You can set permissions by role, branch, or document type to protect sensitive records.\n\n### 11. Custom Module Engine\nAllows you to add custom database tables and approval workflows, ensuring the ERP adapts perfectly to your business model.\n\nBy selecting the modules that address your current bottlenecks, you can build a flexible ERP system that supports your business's growth."
+    }
+  ]
+}
