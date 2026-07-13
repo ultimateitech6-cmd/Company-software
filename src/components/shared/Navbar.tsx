@@ -128,13 +128,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0 group">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={theme === "dark" ? "/ultimate-itech-logo-white-v2.png" : "/ultimate-itech-logo-dark-v2.png"}
-              alt="Ultimate iTech Logo"
-              className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10]"
-              style={{ imageRendering: "-webkit-optimize-contrast" }}
-            />
+             {/* eslint-disable-next-line @next/next/no-img-element */}
+             <img
+               src="/ultimate-itech-logo-dark-v2.png"
+               alt="Ultimate iTech Logo"
+               className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] block dark:hidden"
+               style={{ imageRendering: "-webkit-optimize-contrast" }}
+             />
+             {/* eslint-disable-next-line @next/next/no-img-element */}
+             <img
+               src="/ultimate-itech-logo-white-v2.png"
+               alt="Ultimate iTech Logo"
+               className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] hidden dark:block"
+               style={{ imageRendering: "-webkit-optimize-contrast" }}
+             />
           </Link>
 
           {/* Desktop Nav Links */}

@@ -41,7 +41,7 @@ export default function AdminControlPanel() {
   const [loginError, setLoginError] = useState("");
   const [activeTab, setActiveTab] = useState("overview");
 
-  const [adminTheme, setAdminTheme] = useState<"dark" | "light">("dark");
+  const [adminTheme, setAdminTheme] = useState<"dark" | "light">("light");
 
   useEffect(() => {
     const saved = localStorage.getItem("adminTheme") as "dark" | "light" | null;

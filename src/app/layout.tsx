@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Customizable ERP & CRM Software | YourCompany Software Solutions",
   description: "Accelerate your business with customizable ERP, CRM, and automation solutions. Request a demo today to see our modern B2B enterprise software.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +37,7 @@ export default function RootLayout({
       <head>
         <Script id="theme-script" strategy="beforeInteractive">
           {`try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (localStorage.theme === 'dark') {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
