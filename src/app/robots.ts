@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://ultimateitech.com/sitemap.xml",
+    sitemap: "https://ultimateenterprise.org/sitemap.xml",
   };
 }

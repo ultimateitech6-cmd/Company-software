@@ -3,9 +3,21 @@ import { blogPosts } from "@/data/siteData";
 import { getDb } from "@/lib/dbHelper";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ultimateitech.com";
+  const baseUrl = "https://ultimateenterprise.org";
   const db = getDb();
   const currentBlogs = db.blogPosts && db.blogPosts.length > 0 ? db.blogPosts : blogPosts;
+
+  const targetCities = [
+    "delhi",
+    "noida",
+    "gurgaon",
+    "mumbai",
+    "bangalore",
+    "pune",
+    "hyderabad",
+    "chennai",
+    "kolkata",
+  ];
 
   // Static routes
   const staticRoutes = [
@@ -36,5 +48,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  // Dynamic location landing page routes
+  const locationRoutes = targetCities.flatMap((city) => [
+    {
+      url: `${baseUrl}/erp-software/${city}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/crm-software/${city}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+  ]);
+
+  return [...staticRoutes, ...blogRoutes, ...locationRoutes];
 }
