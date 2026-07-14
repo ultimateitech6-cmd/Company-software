@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { targetCities } from "@/data/cities";
 import { blogPosts } from "@/data/siteData";
 import { getDb } from "@/lib/dbHelper";
 
@@ -6,18 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ultimateenterprise.org";
   const db = getDb();
   const currentBlogs = db.blogPosts && db.blogPosts.length > 0 ? db.blogPosts : blogPosts;
-
-  const targetCities = [
-    "delhi",
-    "noida",
-    "gurgaon",
-    "mumbai",
-    "bangalore",
-    "pune",
-    "hyderabad",
-    "chennai",
-    "kolkata",
-  ];
 
   // Static routes
   const staticRoutes = [
@@ -49,15 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Dynamic location landing page routes
-  const locationRoutes = targetCities.flatMap((city) => [
+  const locationRoutes = targetCities.flatMap(({ slug }) => [
     {
-      url: `${baseUrl}/erp-software/${city}`,
+      url: `${baseUrl}/erp-software/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/crm-software/${city}`,
+      url: `${baseUrl}/crm-software/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,

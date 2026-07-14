@@ -4,6 +4,7 @@ import ModuleCard from "@/components/shared/ModuleCard";
 import CustomButton from "@/components/shared/CustomButton";
 import CTASection from "@/components/shared/CTASection";
 import { erpModules } from "@/data/siteData";
+import { getCityName, getCityStaticParams } from "@/data/cities";
 import { Database, Calendar, BarChart3, ShieldCheck } from "lucide-react";
 import JsonLd, { getSoftwareSchema } from "@/components/shared/JsonLd";
 import type { Metadata } from "next";
@@ -11,22 +12,12 @@ import type { Metadata } from "next";
 type Params = Promise<{ city: string }>;
 
 export async function generateStaticParams() {
-  return [
-    { city: "delhi" },
-    { city: "noida" },
-    { city: "gurgaon" },
-    { city: "mumbai" },
-    { city: "bangalore" },
-    { city: "pune" },
-    { city: "hyderabad" },
-    { city: "chennai" },
-    { city: "kolkata" },
-  ];
+  return getCityStaticParams();
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { city } = await params;
-  const cityName = city.charAt(0).toUpperCase() + city.slice(1);
+  const cityName = getCityName(city);
   return {
     title: `Custom ERP Software in ${cityName} | Ultimate iTech Solutions`,
     description: `Connect and automate your entire company operations in ${cityName}. Our customizable ERP brings HR, employee tracking, geofenced attendance check-ins, payroll, inventory, and finance.`,
@@ -35,7 +26,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function ERPCityPage({ params }: { params: Params }) {
   const { city } = await params;
-  const cityName = city.charAt(0).toUpperCase() + city.slice(1);
+  const cityName = getCityName(city);
 
   return (
     <div className="bg-white dark:bg-slate-950">
