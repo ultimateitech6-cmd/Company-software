@@ -22,7 +22,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     <>
       <Navbar />
       <FloatingDemoButton />
-      <main className="flex-grow pt-20 flex flex-col">
+      <main className="flex-grow pt-28 flex flex-col">
         {children}
       </main>
       <Footer />

@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Database,
   Layers,
+  Users,
   Sparkles,
   Zap,
 } from "lucide-react";
@@ -21,7 +22,8 @@ import CTASection from "@/components/shared/CTASection";
 import ModuleCard from "@/components/shared/ModuleCard";
 import TestimonialCard from "@/components/shared/TestimonialCard";
 import FAQAccordion from "@/components/shared/FAQAccordion";
-import { erpModules, industries, testimonials, faqs } from "@/data/siteData";
+import { erpModules, industries, testimonials, faqs, trustedPartners } from "@/data/siteData";
+import TrustedPartners from "@/components/shared/TrustedPartners";
 import JsonLd, { getOrganizationSchema, getSoftwareSchema, getFAQSchema } from "@/components/shared/JsonLd";
 import FadeIn from "@/components/shared/FadeIn";
 import type { Metadata } from "next";
@@ -30,8 +32,8 @@ import { getDb } from "@/lib/dbHelper";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Customizable ERP & CRM Software | YourCompany Software Solutions",
-  description: "Ditch generic spreadsheets and rigid seat-locked licenses. Get a secure, fully customizable business management platform configured to your exact operations workflows.",
+  title: "Customizable ERP, CRM & HRMS Software | YourCompany Software Solutions",
+  description: "Ditch generic spreadsheets and rigid seat-locked licenses. Get a secure, fully customizable ERP, CRM & HRMS platform configured to your exact operations workflows.",
 };
 
 export default function Home() {
@@ -95,7 +97,7 @@ export default function Home() {
 
             <FadeIn delay={0.1} y={20} animateOnLoad>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-                Custom ERP & CRM Software for{" "}
+                Custom ERP, CRM & HRMS Software for{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-850">
                   Growing Businesses
                 </span>
@@ -173,16 +175,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trusted Partners Section */}
+      <TrustedPartners partners={trustedPartners} />
+
       {/* ERP + CRM Overview Section */}
       <section className="py-20 bg-slate-50 dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Unified Platform"
-            title="The Intersection of ERP Operations & CRM Relationships"
-            subtitle="Why toggle between separate databases? Link your customer-facing sales cycles directly to back-office supply chains, inventory levels, and financial ledgers."
+            title="ERP Operations, CRM Relationships & HRMS People Management"
+            subtitle="One connected platform for your entire business. Link customer-facing sales cycles, back-office supply chains, and your full HR lifecycle — no toggling between separate databases."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             {/* ERP Card Summary */}
             <FadeIn
               delay={0}
@@ -256,6 +261,45 @@ export default function Home() {
               <div className="pt-4">
                 <CustomButton variant="outline" size="sm" href="/crm-software">
                   Explore CRM Features
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </CustomButton>
+              </div>
+            </FadeIn>
+
+            {/* HRMS Card Summary */}
+            <FadeIn
+              delay={0.2}
+              y={20}
+              className="bg-white dark:bg-slate-905 p-8 rounded-3xl border border-slate-105 dark:border-slate-800/80 shadow-sm space-y-6"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
+                <Users className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Custom HRMS Software</h3>
+              <p className="text-sm text-slate-655 dark:text-slate-350 leading-relaxed">
+                Manage your entire people operations lifecycle. Automate recruitment, onboarding, attendance, payroll with statutory compliance (PF/ESI/TDS), performance appraisals, and L&amp;D tracking in one platform.
+              </p>
+              <ul className="grid grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-350">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Recruitment & ATS</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Payroll & Compliance</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Attendance & Leave</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Performance Appraisals</span>
+                </li>
+              </ul>
+              <div className="pt-4">
+                <CustomButton variant="outline" size="sm" href="/hrms-software">
+                  Explore HRMS Modules
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </CustomButton>
               </div>

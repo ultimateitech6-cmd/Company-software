@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ShieldCheck, Database, Layers, Sun, Moon } from "lucide-react";
+import { Menu, X, ChevronDown, ShieldCheck, Database, Layers, Users, Sun, Moon } from "lucide-react";
 import { useDemoModal } from "./DemoModalContext";
 import CustomButton from "./CustomButton";
 import { cn } from "@/lib/utils";
@@ -76,15 +76,22 @@ export default function Navbar() {
       icon: Layers,
       color: "text-emerald-600 bg-emerald-50 dark:bg-emerald-950/30 dark:text-emerald-400",
     },
+    {
+      name: "Custom HRMS Software",
+      href: "/hrms-software",
+      desc: "Full HR lifecycle — payroll, attendance & appraisals.",
+      icon: Users,
+      color: "text-purple-600 bg-purple-50 dark:bg-purple-950/30 dark:text-purple-400",
+    },
   ];
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 w-full border-b border-transparent",
+        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 w-full border-b",
         isScrolled
-          ? "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-sm border-slate-100 dark:border-slate-800/80"
-          : "bg-transparent"
+          ? "bg-slate-900/95 dark:bg-slate-950/90 backdrop-blur-md shadow-md border-slate-800"
+          : "bg-slate-900/90 dark:bg-slate-950/40 border-slate-800/30"
       )}
     >
       {/* Top Bar (Only visible on desktop and when not scrolled) */}
@@ -97,7 +104,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1 font-medium text-slate-400 dark:text-slate-400">
-              <span className="text-indigo-400 font-bold">★</span> Global Customizable ERP & CRM Solutions
+              <span className="text-indigo-400 font-bold">★</span> Global Customizable ERP, CRM & HRMS Solutions
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -128,20 +135,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0 group">
-             {/* eslint-disable-next-line @next/next/no-img-element */}
-             <img
-               src="/ultimate-itech-logo-dark-v2.png"
-               alt="Ultimate iTech Logo"
-               className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] block dark:hidden"
-               style={{ imageRendering: "-webkit-optimize-contrast" }}
-             />
-             {/* eslint-disable-next-line @next/next/no-img-element */}
-             <img
-               src="/ultimate-itech-logo-white-v2.png"
-               alt="Ultimate iTech Logo"
-               className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] hidden dark:block"
-               style={{ imageRendering: "-webkit-optimize-contrast" }}
-             />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/ultimate-itech-logo-dark-v2.png"
+              alt="Ultimate iTech Logo"
+              className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] block dark:hidden"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/ultimate-itech-logo-white-v2.png"
+              alt="Ultimate iTech Logo"
+              className="h-13 md:h-18 lg:h-20 w-auto object-contain transition-transform group-hover:scale-102 contrast-[1.10] hidden dark:block"
+              style={{ imageRendering: "-webkit-optimize-contrast" }}
+            />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -155,9 +162,9 @@ export default function Navbar() {
               <button
                 className={cn(
                   "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors cursor-pointer",
-                  pathname === "/erp-software" || pathname === "/crm-software"
-                    ? "text-indigo-600 dark:text-indigo-400"
-                    : "text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-white"
+                  pathname === "/erp-software" || pathname === "/crm-software" || pathname === "/hrms-software"
+                    ? "text-indigo-400"
+                    : "text-slate-300 hover:text-white"
                 )}
               >
                 Products
@@ -166,30 +173,32 @@ export default function Navbar() {
 
               {/* Products Dropdown Menu */}
               {isProductsDropdownOpen && (
-                <div className="absolute top-full -left-4 w-80 mt-1 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-850 rounded-xl shadow-xl p-3 grid gap-1 z-50">
-                  {productLinks.map((prod) => {
-                    const IconComp = prod.icon;
-                    return (
-                      <Link
-                        key={prod.name}
-                        href={prod.href}
-                        className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group"
-                        onClick={() => setIsProductsDropdownOpen(false)}
-                      >
-                        <div className={cn("p-2 rounded-lg mt-0.5", prod.color)}>
-                          <IconComp className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-slate-855 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
-                            {prod.name}
-                          </p>
-                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                            {prod.desc}
-                          </p>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                <div className="absolute top-full -left-4 w-80 pt-2 z-50">
+                  <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-850 rounded-xl shadow-xl p-3 grid gap-1">
+                    {productLinks.map((prod) => {
+                      const IconComp = prod.icon;
+                      return (
+                        <Link
+                          key={prod.name}
+                          href={prod.href}
+                          className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group"
+                          onClick={() => setIsProductsDropdownOpen(false)}
+                        >
+                          <div className={cn("p-2 rounded-lg mt-0.5", prod.color)}>
+                            <IconComp className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-slate-855 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                              {prod.name}
+                            </p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                              {prod.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
@@ -202,8 +211,8 @@ export default function Navbar() {
                 className={cn(
                   "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
                   pathname === link.href
-                    ? "text-indigo-600 dark:text-indigo-400"
-                    : "text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-white"
+                    ? "text-indigo-400"
+                    : "text-slate-300 hover:text-white"
                 )}
               >
                 {link.name}
@@ -215,7 +224,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Toggle dark mode"
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -233,14 +242,14 @@ export default function Navbar() {
           <div className="lg:hidden flex items-center gap-1">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-350 dark:hover:text-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label="Toggle dark mode"
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-slate-600 hover:text-indigo-600 hover:bg-slate-100 dark:text-slate-350 dark:hover:text-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

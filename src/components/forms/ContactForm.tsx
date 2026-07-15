@@ -8,11 +8,17 @@ import { CheckCircle2, Loader2, Send } from "lucide-react";
 import CustomButton from "../shared/CustomButton";
 
 const contactSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters." })
+    .regex(/^[a-zA-Z\s]+$/, { message: "Name must contain letters only." }),
   companyName: z.string().min(2, { message: "Company name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().min(8, { message: "Please enter a valid phone number (min 8 digits)." }),
-  requirementType: z.enum(["erp", "crm", "both", "custom"]),
+  phone: z
+    .string()
+    .length(10, { message: "Phone number must be exactly 10 digits." })
+    .regex(/^[0-9]{10}$/, { message: "Phone number must contain digits only." }),
+  requirementType: z.enum(["erp", "crm", "hrms", "both", "custom"]),
   numberOfUsers: z.enum(["1-10", "11-50", "51-200", "200+"]),
   preferredTime: z.enum(["morning", "afternoon", "evening"]),
   message: z.string().min(5, { message: "Message must be at least 5 characters." }),
@@ -113,10 +119,16 @@ export default function ContactForm() {
                   e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
                 }
               })}
+              onKeyDown={(e) => {
+                const allowed = ["Backspace", "Delete", "Tab", "Escape", "ArrowLeft", "ArrowRight", "Home", "End", "Space"];
+                if (allowed.includes(e.key)) return;
+                if (!/^[a-zA-Z\s]$/.test(e.key)) e.preventDefault();
+              }}
+              maxLength={50}
               className={`w-full px-3.5 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-950 dark:border-slate-800 dark:text-white ${
                 errors.name ? "border-red-500 focus:ring-red-500" : "border-slate-300 dark:border-slate-800"
               }`}
-              placeholder="Sarah Jenkins"
+              placeholder="Rahul Sharma"
             />
             {errors.name && (
               <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -167,13 +179,23 @@ export default function ContactForm() {
               type="tel"
               {...register("phone", {
                 onChange: (e) => {
-                  e.target.value = e.target.value.replace(/[^0-9\s+\-()]/g, "");
+                  // Strip everything except digits, then cap at 10
+                  e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
                 }
               })}
+              onKeyDown={(e) => {
+                const allowed = ["Backspace", "Delete", "Tab", "Escape", "ArrowLeft", "ArrowRight", "Home", "End"];
+                if (allowed.includes(e.key)) return;
+                if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+                const current = (e.target as HTMLInputElement).value.replace(/[^0-9]/g, "");
+                if (current.length >= 10) e.preventDefault();
+              }}
+              maxLength={10}
+              inputMode="numeric"
               className={`w-full px-3.5 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-950 dark:border-slate-800 dark:text-white ${
                 errors.phone ? "border-red-500 focus:ring-red-500" : "border-slate-300 dark:border-slate-800"
               }`}
-              placeholder="+1 (555) 019-9122"
+              placeholder="9876543210"
             />
             {errors.phone && (
               <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
@@ -192,7 +214,8 @@ export default function ContactForm() {
             >
               <option value="erp">ERP Software</option>
               <option value="crm">CRM Software</option>
-              <option value="both">Both ERP & CRM</option>
+              <option value="hrms">HRMS Software</option>
+              <option value="both">ERP + CRM + HRMS</option>
               <option value="custom">Custom Module</option>
             </select>
           </div>

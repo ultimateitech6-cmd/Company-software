@@ -50,3 +50,21 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Partner Marquee Scroll Animation */
+@keyframes partnerScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-marquee-track {
+  animation: partnerScroll 30s linear infinite;
+}
+
+.partner-marquee-wrapper:hover .partner-marquee-track {
+  animation-play-state: paused;
+}

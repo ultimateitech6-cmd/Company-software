@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/erp-software",
     "/crm-software",
+    "/hrms-software",
     "/features",
     "/industries",
     "/pricing",
@@ -47,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/crm-software/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/hrms-software/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,

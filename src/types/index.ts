@@ -22,6 +22,14 @@ export interface CRMFeature {
   details: string[];
 }
 
+export interface HRMSFeature {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+  details: string[];
+}
+
 export interface Industry {
   id: string;
   title: string;
@@ -89,4 +97,11 @@ export interface CaseStudy {
     author: string;
     role: string;
   };
+}
+
+export interface TrustedPartner {
+  id: string;
+  name: string;
+  logo?: string; // Path to logo image in /public/partners/
+  website?: string;
 }

@@ -38,20 +38,24 @@ export const getOrganizationSchema = () => ({
 });
 
 // Pre-defined SoftwareApplication schema
-export const getSoftwareSchema = (type: "ERP" | "CRM" | "Combined") => {
+export const getSoftwareSchema = (type: "ERP" | "CRM" | "HRMS" | "Combined") => {
   const name =
     type === "ERP"
       ? "YourCompany ERP Software Platform"
       : type === "CRM"
       ? "YourCompany CRM Customer Suite"
-      : "YourCompany ERP & CRM Combined Suite";
+      : type === "HRMS"
+      ? "YourCompany HRMS Human Resource Management System"
+      : "YourCompany ERP, CRM & HRMS Combined Suite";
 
   const desc =
     type === "ERP"
       ? "Customizable ERP system mapping HR, payroll, inventory, and finance operations."
       : type === "CRM"
       ? "Fully integrated B2B customer relationship pipeline with automated nurturing follow-ups."
-      : "A unified enterprise platform joining CRM pipelines and back-office ERP modules.";
+      : type === "HRMS"
+      ? "End-to-end HRMS covering recruitment, attendance, payroll, performance, and statutory compliance."
+      : "A unified enterprise platform joining CRM pipelines, back-office ERP modules, and full HRMS.";
 
   return {
     "@context": "https://schema.org",
@@ -62,7 +66,7 @@ export const getSoftwareSchema = (type: "ERP" | "CRM" | "Combined") => {
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": type === "ERP" ? "99.00" : "249.00",
+      "price": type === "ERP" ? "99.00" : type === "HRMS" ? "99.00" : "249.00",
     },
     "description": desc,
   };

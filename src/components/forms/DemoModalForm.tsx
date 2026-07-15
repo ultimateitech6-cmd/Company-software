@@ -8,18 +8,24 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import CustomButton from "../shared/CustomButton";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters." })
+    .regex(/^[a-zA-Z\s]+$/, { message: "Name must contain letters only." }),
   companyName: z.string().min(2, { message: "Company name must be at least 2 characters." }),
-  phone: z.string().min(8, { message: "Please enter a valid phone number (min 8 digits)." }),
+  phone: z
+    .string()
+    .length(10, { message: "Phone number must be exactly 10 digits." })
+    .regex(/^[0-9]{10}$/, { message: "Phone number must contain digits only." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  requirementType: z.enum(["erp", "crm", "both", "custom"]),
+  requirementType: z.enum(["erp", "crm", "hrms", "both", "custom"]),
   message: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 interface DemoModalFormProps {
-  initialRequirementType?: "erp" | "crm" | "both" | "custom" | null;
+  initialRequirementType?: "erp" | "crm" | "hrms" | "both" | "custom" | null;
   onSuccessSubmit?: () => void;
 }
 
@@ -42,7 +48,7 @@ export default function DemoModalForm({
       companyName: "",
       phone: "",
       email: "",
-      requirementType: initialRequirementType || "erp",
+      requirementType: (initialRequirementType as "erp" | "crm" | "hrms" | "both" | "custom") || "erp",
       message: "",
     },
   });
@@ -113,10 +119,18 @@ export default function DemoModalForm({
               e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
             }
           })}
+          onKeyDown={(e) => {
+            // Allow: backspace, delete, tab, escape, arrows, home, end
+            const allowed = ["Backspace", "Delete", "Tab", "Escape", "ArrowLeft", "ArrowRight", "Home", "End", "Space"];
+            if (allowed.includes(e.key)) return;
+            // Block anything that isn't a letter or space
+            if (!/^[a-zA-Z\s]$/.test(e.key)) e.preventDefault();
+          }}
+          maxLength={50}
           className={`w-full px-3.5 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-950 dark:border-slate-800 dark:text-white ${
             errors.name ? "border-red-500 focus:ring-red-500" : "border-slate-300"
           }`}
-          placeholder="John Doe"
+          placeholder="Rahul Sharma"
         />
         {errors.name && (
           <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -168,13 +182,26 @@ export default function DemoModalForm({
             type="tel"
             {...register("phone", {
               onChange: (e) => {
-                e.target.value = e.target.value.replace(/[^0-9\s+\-()]/g, "");
+                // Strip everything except digits, then cap at 10
+                e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
               }
             })}
+            onKeyDown={(e) => {
+              // Allow: backspace, delete, tab, escape, arrows
+              const allowed = ["Backspace", "Delete", "Tab", "Escape", "ArrowLeft", "ArrowRight", "Home", "End"];
+              if (allowed.includes(e.key)) return;
+              // Block non-digit keys
+              if (!/^[0-9]$/.test(e.key)) e.preventDefault();
+              // Block if already 10 digits
+              const current = (e.target as HTMLInputElement).value.replace(/[^0-9]/g, "");
+              if (current.length >= 10) e.preventDefault();
+            }}
+            maxLength={10}
+            inputMode="numeric"
             className={`w-full px-3.5 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-950 dark:border-slate-800 dark:text-white ${
               errors.phone ? "border-red-500 focus:ring-red-500" : "border-slate-300"
             }`}
-            placeholder="+1 (555) 000-0000"
+            placeholder="9876543210"
           />
           {errors.phone && (
             <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
@@ -193,7 +220,8 @@ export default function DemoModalForm({
           >
             <option value="erp">ERP Software</option>
             <option value="crm">CRM Software</option>
-            <option value="both">Both ERP & CRM</option>
+            <option value="hrms">HRMS Software</option>
+            <option value="both">ERP + CRM + HRMS</option>
             <option value="custom">Custom Solutions</option>
           </select>
           {errors.requirementType && (

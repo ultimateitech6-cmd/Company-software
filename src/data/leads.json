@@ -5,7 +5,7 @@
     "email": "rohan@sharmapackagers.com",
     "phone": "+91 98765 43210",
     "message": "Looking for custom ERP configuration to manage three packaging warehouses in Mumbai. Need integration with our biometric check-in machines.",
-    "status": "New",
+    "status": "Contacted",
     "createdAt": "2026-07-13T10:30:00.000Z"
   },
   {
@@ -16,5 +16,14 @@
     "message": "Interested in CRM standard plan demo. We want to track follow-ups of our logistics clients.",
     "status": "Contacted",
     "createdAt": "2026-07-13T11:45:00.000Z"
+  },
+  {
+    "id": "lead-1784109898054-t2zx",
+    "name": "Rahul Sharma",
+    "email": "ap9153@gmail.com",
+    "phone": "7896587411",
+    "message": "Company: Rahul pvt ltd | Demo Request for: erp | Message: hi i want crm for my company ",
+    "status": "New",
+    "createdAt": "2026-07-15T10:04:58.054Z"
   }
 ]

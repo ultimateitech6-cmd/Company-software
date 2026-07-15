@@ -1,4 +1,4 @@
-import { ERPModule, CRMFeature, Feature, Industry, PricingPlan, BlogPost, Testimonial, FAQItem, CaseStudy } from "../types";
+import { ERPModule, CRMFeature, HRMSFeature, Feature, Industry, PricingPlan, BlogPost, Testimonial, FAQItem, CaseStudy, TrustedPartner } from "../types";
 
 export const erpModules: ERPModule[] = [
   {
@@ -242,6 +242,105 @@ export const crmFeatures: CRMFeature[] = [
       "Conversion rate analysis (MQL to SQL)",
       "Customer Lifetime Value (LTV) forecasts",
       "Acquisition cost (CAC) calculations"
+    ]
+  }
+];
+
+export const hrmsFeatures: HRMSFeature[] = [
+  {
+    id: "recruitment-hiring",
+    title: "Recruitment & Hiring",
+    description: "End-to-end applicant tracking from job posting to offer letter, with pipeline visibility across all open positions.",
+    iconName: "UserSearch",
+    details: [
+      "Job posting to multiple boards (LinkedIn, Naukri, Indeed)",
+      "Applicant Tracking System (ATS) with resume parser",
+      "Interview scheduling & panel feedback forms",
+      "Offer letter generation & e-signature workflows"
+    ]
+  },
+  {
+    id: "onboarding",
+    title: "Employee Onboarding",
+    description: "Structured digital onboarding journeys that reduce time-to-productivity and ensure compliance for every new hire.",
+    iconName: "ClipboardList",
+    details: [
+      "Digital document collection & KYC verification",
+      "Automated task checklists for HR & IT teams",
+      "Policy acknowledgement & e-signature tracking",
+      "Buddy assignment & department orientation scheduler"
+    ]
+  },
+  {
+    id: "attendance-leave",
+    title: "Attendance & Leave Management",
+    description: "Accurate attendance capture via biometric, geofencing, or web check-in, linked directly to payroll and leave balances.",
+    iconName: "CalendarClock",
+    details: [
+      "Biometric & geofenced mobile punch in/out",
+      "Shift roster builder with drag-and-drop scheduling",
+      "Multi-policy leave configurator (CL, SL, EL, WFH)",
+      "Leave approval workflows with manager delegation"
+    ]
+  },
+  {
+    id: "payroll-compliance",
+    title: "Payroll & Statutory Compliance",
+    description: "Run error-free payroll in minutes with auto-computed PF, ESI, TDS, gratuity, and statutory deductions.",
+    iconName: "BadgeIndianRupee",
+    details: [
+      "Configurable salary structures (CTC to in-hand)",
+      "Automated PF, ESI, TDS, & gratuity computation",
+      "One-click PDF payslip generation & email dispatch",
+      "Bank transfer file generation & Form 16 export"
+    ]
+  },
+  {
+    id: "performance-management",
+    title: "Performance Management",
+    description: "Goal-setting, continuous feedback, and structured appraisal cycles that align individual performance to business objectives.",
+    iconName: "Target",
+    details: [
+      "OKR & KPI goal-setting with cascading objectives",
+      "Continuous 360° feedback & peer reviews",
+      "Appraisal cycle management with rating calibration",
+      "Performance improvement plan (PIP) workflows"
+    ]
+  },
+  {
+    id: "learning-development",
+    title: "Learning & Development",
+    description: "Build a skills-first culture with course assignments, completion tracking, and certification management.",
+    iconName: "GraduationCap",
+    details: [
+      "Course library with video, PDF & quiz support",
+      "Mandatory training assignment & deadline tracking",
+      "Skill matrix & competency gap analysis",
+      "Certification expiry alerts & renewal workflows"
+    ]
+  },
+  {
+    id: "employee-self-service",
+    title: "Employee Self-Service Portal",
+    description: "Empower employees to manage their own data, requests, and documents without HR bottlenecks.",
+    iconName: "UserCog",
+    details: [
+      "Profile updates, ID uploads & bank detail changes",
+      "Leave applications & payslip download center",
+      "Expense claim submission & approval tracking",
+      "IT asset request & helpdesk ticket submission"
+    ]
+  },
+  {
+    id: "hr-analytics",
+    title: "HR Analytics & Reporting",
+    description: "Data-driven people insights across headcount, attrition, cost, and engagement for strategic workforce planning.",
+    iconName: "BarChart3",
+    details: [
+      "Headcount, attrition & cost-per-hire dashboards",
+      "Diversity, equity & inclusion (DEI) reports",
+      "Workforce forecasting & bench strength analysis",
+      "Scheduled HR reports in PDF/Excel format"
     ]
   }
 ];
@@ -878,4 +977,61 @@ Allows you to add custom database tables and approval workflows, ensuring the ER
 By selecting the modules that address your current bottlenecks, you can build a flexible ERP system that supports your business's growth.
 `
   }
+];
+
+export const trustedPartners: TrustedPartner[] = [
+  {
+    id: "ultimate-itech",
+    name: "Ultimate iTech",
+    logo: "/partners/ultimate-itech.png",
+    website: "https://ultimateitech.com",
+  },
+  {
+    id: "startup-business-india",
+    name: "Startup & Business India",
+    logo: "/partners/startup-business-india.png",
+    website: "#",
+  },
+  {
+    id: "sristech",
+    name: "SrisTech",
+    logo: "/partners/sristech.png",
+    website: "#",
+  },
+  {
+    id: "sristech-movies",
+    name: "SrisTech Movies",
+    logo: "/partners/sristech-movies.png",
+    website: "#",
+  },
+  {
+    id: "bsh-infra",
+    name: "BSH Infra",
+    logo: "/partners/bsh-infra.png",
+    website: "#",
+  },
+  {
+    id: "bsh-realty",
+    name: "BSH Realty",
+    logo: "/partners/bsh-realty.png",
+    website: "#",
+  },
+  {
+    id: "pdss-law",
+    name: "PDSS Law",
+    logo: "/partners/pdss-law.png",
+    website: "#",
+  },
+  {
+    id: "pdce",
+    name: "PDCE",
+    logo: "/partners/pdce.png",
+    website: "#",
+  },
+  {
+    id: "indian-trade-mart",
+    name: "Indian Trade Mart",
+    logo: "/partners/indian-trade-mart.png",
+    website: "#",
+  },
 ];

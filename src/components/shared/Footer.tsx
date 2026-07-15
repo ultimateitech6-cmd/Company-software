@@ -13,6 +13,7 @@ export default function Footer() {
   const productLinks = [
     { name: "ERP Software", href: "/erp-software" },
     { name: "CRM Software", href: "/crm-software" },
+    { name: "HRMS Software", href: "/hrms-software" },
     { name: "Core Features", href: "/features" },
     { name: "Pricing Options", href: "/pricing" },
   ];
@@ -45,7 +46,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              Ultimate iTech builds customizable ERP and CRM systems engineered to automate manual business workflows, increase operations visibility, and drive growth.
+              Ultimate iTech builds customizable ERP, CRM, and HRMS systems engineered to automate manual business workflows, increase operations visibility, and drive growth.
             </p>
           </div>
 

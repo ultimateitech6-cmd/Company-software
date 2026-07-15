@@ -35,7 +35,7 @@ export default function CustomButton({
     secondary:
       "bg-emerald-600 text-white hover:bg-emerald-700 active:bg-emerald-800 focus:ring-emerald-500 shadow-md shadow-emerald-200 dark:shadow-none",
     outline:
-      "border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 hover:text-slate-900 focus:ring-indigo-500 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800",
+      "border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 hover:text-slate-900 focus:ring-indigo-500 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
     ghost:
       "text-slate-600 hover:bg-slate-100 hover:text-slate-900 focus:ring-slate-400 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100",
   };
